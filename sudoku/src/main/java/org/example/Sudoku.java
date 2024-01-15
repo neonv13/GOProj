@@ -101,15 +101,6 @@ public class Sudoku {
                 castSudoku[x+6][i+3] = sudoku[7][x][i];
                 castSudoku[x+6][i+6] = sudoku[8][x][i];
 
-//                castSudoku[x][i] = sudoku[0][x][i];
-//                castSudoku[x][i+3] = sudoku[1][x][i];
-//                castSudoku[x][i+6] = sudoku[2][x][i];
-//                castSudoku[x+3][i] = sudoku[3][x][i];
-//                castSudoku[x+3][i+3] = sudoku[4][x][i];
-//                castSudoku[x+3][i+6] = sudoku[5][x][i];
-//                castSudoku[x+6][i] = sudoku[6][x][i];
-//                castSudoku[x+6][i+3] = sudoku[7][x][i];
-//                castSudoku[x+6][i+6] = sudoku[8][x][i];
             }
         }
         return castSudoku;
@@ -194,7 +185,7 @@ public class Sudoku {
         for (int j = 0; j < 9; j++) {
             for(int x= 0; x < 3; x++){
                 for (int i = 0; i< 3; i++){
-                    if (sudokuFix[j][x][1] != 0) { // Assuming the third dimension is used for Sudoku values
+                    if (sudokuFix[j][x][1] != 0) {
                         numberOfIterations++;
                     }
                 }
@@ -245,7 +236,6 @@ public class Sudoku {
 
         for (int i = 1; i <= 9; i++) {
             proposedSudoku newSudoku = proposedState(tmpSudoku);
-//            System.out.println("box: "+ newSudoku.boxes.grid + " cell: "+ newSudoku.boxes.firstBox + " and: "+ newSudoku.boxes.secondBox);
             listOfDifferences.add((double) calculateErrors(newSudoku.sudoku));
         }
 
